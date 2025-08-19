@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './proveedores.html',
   styleUrls: ['./proveedores.css']
 })
-export class ProveedoresFormComponent {
+export class ProveedoresComponent {
   fileError: string | null = null;
   // Lista de archivos permitidos (incluyendo PDF para el catálogo)
   readonly allowedFileTypes = [
@@ -30,7 +30,7 @@ export class ProveedoresFormComponent {
     if (this.allowedFileTypes.includes(file.type)) {
       this.fileError = null;
     } else {
-      this.fileError = 'Archivo no valido. Por favor, selecciona un archivo permitido.';
+      this.fileError = 'Archivo no valido. Por favor, selecciona un archivo permitido. (png, pdf,jpeg, Word, Excel)';
       event.target.value = null;
     }
   }
